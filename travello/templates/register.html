@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<h2>Welcome To Travel USER REGISTRATION</h2>
+<form action="{% url 'register' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="first_name" placeholder="enter u r first name"><br>
+    <input type="text" name="last_name" placeholder="enter u r lastname"><br>
+    <input type="text" name="username" placeholder="enter u r username"><br>
+    <input type="email" name="email" placeholder="enter u r email"><br>
+    <input type="password" name="password1" placeholder="enter u r password"><br>
+    <input type="password" name="password2" placeholder="enter u r conform password"><br>
+    <input type="submit">
+
+</form>
+<div>
+  {% for message in messages %}
+<h3>{{ message }}</h3>
+    {% endfor %}
+</div>
+</body>
+</html>
